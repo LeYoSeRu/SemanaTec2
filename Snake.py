@@ -46,11 +46,10 @@ def move():
         snake.pop(0)
 
     clear()
-
+    colores=["black", "green", "blue", "pink", "yellow"]
     for body in snake:
-        square(body.x, body.y, 9, 'black')
-
-    square(food.x, food.y, 9, 'green')
+        square(body.x, body.y, 9, colores[a])
+    square(food.x, food.y, 9, colores[b])
     update()
     ontimer(move, 100)
 
@@ -62,5 +61,10 @@ onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
+a=randrange(0, 5, 1)
+b=randrange(0, 5, 1)
+while a==b:
+    a=randrange(0, 5, 1)
+    b=randrange(0, 5, 1)
 move()
 done()
