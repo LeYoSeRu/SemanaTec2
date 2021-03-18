@@ -77,6 +77,7 @@ onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
+#
 a=randrange(0, 5, 1)
 b=randrange(0, 5, 1)
 while a==b:
