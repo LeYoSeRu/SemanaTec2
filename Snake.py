@@ -12,7 +12,8 @@ Exercises
 from turtle import *
 from random import randrange
 from freegames import square, vector
-
+#Se definen como vectores las posiciones que ocupan la comida y la serpiente, así como el vector que
+#indica la dirección de movimiento
 food = vector(0, 0)
 snake = [vector(10, 0)]
 aim = vector(0, -10)
@@ -60,6 +61,7 @@ def move():
         snake.pop(0)
 
     clear()
+    #Lista de posibles colores para la víbora y la comida
     colores=["black", "green", "blue", "pink", "yellow"]
     for body in snake:
         square(body.x, body.y, 9, colores[a])
@@ -73,11 +75,13 @@ setup(420, 420, 370, 0)
 hideturtle()
 tracer(False)
 listen()
+#Funciones que cambian la dirección de la víbora dependiendo de la tecla presionada.
 onkey(lambda: change(10, 0), 'Right')
 onkey(lambda: change(-10, 0), 'Left')
 onkey(lambda: change(0, 10), 'Up')
 onkey(lambda: change(0, -10), 'Down')
-#
+#Se obtienen dos números enteros aleatorios entre 0 y 5 que representan un color. 
+#Estos números siempre son distintos entre sí
 a=randrange(0, 5, 1)
 b=randrange(0, 5, 1)
 while a==b:
